@@ -1,0 +1,180 @@
+/* base.css */
+
+/* Стили для #header */
+#header {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+#header .logo {
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Стили для #subheader */
+#subheader {
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+#subheader .cart {
+  ;
+  font-size: 18px;
+  color: #888;
+}
+
+/* Стили для #content */
+#content {
+  padding: 20px;
+}
+
+/* Общие стили для страницы */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Стили для #sidebar */
+#sidebar {
+  float: left;
+  width: 200px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+#sidebar h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar li {
+  margin-bottom: 10px;
+}
+
+#sidebar li a {
+  text-decoration: none;
+  color: #333;
+}
+
+#sidebar li.selected {
+  font-weight: bold;
+}
+
+/* Стили для #main */
+#main {
+  margin-left: 220px;
+  padding: 20px;
+}
+
+#main h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+#main .item {
+  height: 410px;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+#main .item img {
+
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+#main .item a {
+  text-decoration: none;
+  color: #333;
+}
+
+#main .item a:hover {
+  text-decoration: underline;
+}
+
+/* base.css */
+
+/* Стили для .product-detail */
+.product-detail {
+  text-align: center;
+  padding: 20px;
+}
+
+.product-detail img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.product-detail h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-detail h2 {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.product-detail h2 a {
+  text-decoration: none;
+  color: #888;
+}
+
+.product-detail p.price {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.product-detail p.description {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Описание товара */
+.product-description {
+  text-align: left;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.product-description h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-description p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.product-description ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.product-description ul li {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.product-description strong {
+  font-weight: bold;
+}
