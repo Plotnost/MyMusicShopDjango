@@ -150,7 +150,7 @@ body {
   align-items: center;
   text-align: center;
   margin-top: 50px;
-    border-style: solid;
+  border-style: solid;
   border-color: #888888;
   border-width: 1px;
 }
@@ -312,58 +312,59 @@ body {
 
 /* Оформление заказа */
 
-.order-info {
-  margin-bottom: 20px;
-}
+  .order-info {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
 
-.order-info h3 {
-  font-size: 20px;
-  font-weight: bold;
-}
+  .order-info h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
 
-.order-info ul {
-  list-style: none;
-  padding: 0;
-}
+  .order-info ul {
+    list-style: none;
+    padding: 0;
+  }
 
-.order-info li {
-  margin-bottom: 10px;
-}
+  .order-info li {
+    margin-bottom: 10px;
+  }
 
-.order-info li span {
-  margin-left: 10px;
-}
+  .order-info li span {
+    margin-left: 10px;
+  }
 
-.order-form {
-  margin-top: 20px;
-}
+  .order-form {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
 
-.order-form label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
+  .order-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
 
-.order-form input[type="text"],
-.order-form input[type="email"],
-.order-form input[type="number"],
-.order-form select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
+  .order-form input[type="text"],
+  .order-form input[type="email"],
+  .order-form input[type="number"],
+  .order-form select {
+    width: 99%;
+    padding: 10px;
+  }
 
-.order-form input[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+  .order-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
-.order-form input[type="submit"]:hover {
-  background-color: #45a049;
-}
+  .order-form input[type="submit"]:hover {
+    background-color: #45a049;
+  }
