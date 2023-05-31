@@ -8,11 +8,21 @@
 </head>
 <body>
 <div id="header">
-    <a href="/" class="logo">My shop</a>
+    <a href="/" class="logo">Music shop</a>
 </div>
 <div id="subheader">
     <div class="cart">
-        Your cart is empty.
+    {% with total_items=cart|length %}
+        {% if cart|length > 0 %}
+            Ваша корзина:
+            <a href="{% url "cart:cart_detail" %}">
+                {{ total_items }} item{{ total_items|pluralize }},
+                ${{ cart.get_total_price }}
+            </a>
+        {% else %}
+            Ваша корзина пуста
+        {% endif %}
+    {% endwith %}
     </div>
 </div>
 <div id="content">

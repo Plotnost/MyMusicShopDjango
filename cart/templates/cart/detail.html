@@ -1,20 +1,17 @@
 {% extends "shop/base.html" %}
-<link href="{% static "css/cart.css" %}" rel="stylesheet">
 {% load static %}
-{% block title %}
-    Your shopping cart
-{% endblock %}
+{% block title %}Ваша корзина{% endblock %}
 {% block content %}
-    <h1>Your shopping cart</h1>
+    <h1>Ваша корзина</h1>
     <table class="cart">
         <thead>
         <tr>
-            <th>Image</th>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Remove</th>
-            <th>Unit price</th>
-            <th>Price</th>
+            <th></th>
+            <th>Навзание</th>
+            <th>Кол-во</th>
+            <th></th>
+            <th>Цена одного товара</th>
+            <th>Общая цена товаров</th>
         </tr>
         </thead>
         <tbody>
@@ -33,21 +30,23 @@
                     </td>
                     <td>{{ product.name }}</td>
                     <td>{{ item.quantity }}</td>
-                    <td><a href="{% url "cart:cart_remove" product.id%}">Remove</a></td>
-                    <td class="num">${{ item.price }}</td>
-                    <td class="num">${{ item.total_price }}</td>
+                    <td><a href="{% url "cart:cart_remove" product.id%}">Удалить товар</a></td>
+                    <td class="num">{{ item.price }} руб</td>
+                    <td class="num">{{ item.total_price }} руб</td>
                 </tr>
             {% endwith %}
         {% endfor %}
         <tr class="total">
-            <td>Total</td>
+            <td>Общая стоимость</td>
             <td colspan="4"></td>
-            <td class="num">${{ cart.get_total_price }}</td>
+            <td class="num">{{ cart.get_total_price }} руб</td>
         </tr>
         </tbody>
     </table>
     <p class="text-right">
-        <a href="{% url "shop:product_list" %}" class="button light">Continue shopping</a>
-        <a href="#" class="button">Checkout</a>
+        <a href="{% url "shop:product_list" %}" class="button light">Продолжить покупку</a>
+        <a href="{% url "orders:order_create" %}" class="button">
+            Оформить заказ
+        </a>
     </p>
 {% endblock %}
