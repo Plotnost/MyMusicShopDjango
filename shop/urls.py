@@ -1,9 +1,9 @@
-from django.urls import path, re_path
-from . import views
+from django.urls import path
+from .views import ProductListView, ProductDetailView
 
 urlpatterns = [
-    path('', views.product_list, name='product_list'),
-    re_path(r'^(?P<category_slug>[-\w]+)/$', views.product_list, name='product_list_by_category'),
-    re_path(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', views.product_detail, name='product_detail'),
+    path('', ProductListView.as_view(), name='product_list'),
+    path('<slug:category_slug>/', ProductListView.as_view(), name='product_list_by_category'),
+    path('<int:id>/<slug:slug>/', ProductDetailView.as_view(), name='product_detail'),
 ]
 
