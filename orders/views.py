@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from .models import OrderItem
 from .forms import OrderCreateForm
 from cart.cart import Cart
@@ -12,6 +11,8 @@ class OrderCreateView(View):
         form = OrderCreateForm()
         return render(request, 'orders/order/create.html', {'cart': cart, 'form': form})
 
+
+class OrderCreateSubmitView(OrderCreateView):
     def post(self, request):
         cart = Cart(request)
         form = OrderCreateForm(request.POST)

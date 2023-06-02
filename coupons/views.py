@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.views.decorators.http import require_POST
 from django.utils import timezone
 from django.views import View
