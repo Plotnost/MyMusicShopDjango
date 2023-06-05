@@ -88,15 +88,15 @@ body {
 }
 
 #main .item {
-  height: 410px;
-  width: 150px;
+  height: 440px;
+  width: 155px;
   margin-bottom: 20px;
 }
 
 #main .item img {
 
-  width: 150px;
-  height: auto;
+  max-height: 343px;
+  max-width: 150px;
   margin-bottom: 10px;
 }
 
@@ -107,6 +107,7 @@ body {
 
 #main .item a:hover {
   text-decoration: underline;
+
 }
 
 .product-container {
