@@ -2,4 +2,4 @@ from django import forms
 
 
 class CouponApplyForm(forms.Form):
-    code = forms.CharField(label="Код купона")
+    code = forms.CharField(label='Код купона')
