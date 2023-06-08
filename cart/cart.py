@@ -1,7 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
 from shop.models import Product
-from coupons.models import Coupon
+from coupons.models import FixedPriceCoupon, PercentageCoupon
 
 
 class Cart(object):
@@ -15,7 +15,8 @@ class Cart(object):
             # сохраняем пустую корзину в сессии
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
-        self.coupon_id = self.session.get('coupon_id')
+        self.percentage_coupon_id = self.session.get('percentage_coupon_id')
+        self.fixed_coupon_ids = self.session.get('fixed_coupon_ids')
 
     def add(self, product, quantity=1, update_quantity=False):
         """
@@ -80,15 +81,31 @@ class Cart(object):
         self.session.modified = True
 
     @property
-    def coupon(self):
-        if self.coupon_id:
-            return Coupon.objects.get(id=self.coupon_id)
+    def percentage_coupon(self):
+        if self.percentage_coupon_id:
+            return PercentageCoupon.objects.get(id=self.percentage_coupon_id)
         return None
 
+    def fixed_coupon(self):
+        if self.fixed_coupon_ids:
+            return FixedPriceCoupon.objects.filter(id__in=self.fixed_coupon_ids)
+        return None
+
+    def get_fixed_discount(self):
+        discount = 0
+        if self.fixed_coupon():
+            for coupon in self.fixed_coupon():
+                discount += coupon.discount
+        return discount
+
     def get_discount(self):
-        if self.coupon:
-            return (self.coupon.discount / Decimal('100')) * self.get_total_price()
-        return Decimal('0')
+        discount = Decimal('0')
+        if self.percentage_coupon:
+            discount += (self.percentage_coupon.discount / Decimal('100')) * self.get_total_price()
+        if self.fixed_coupon():
+            for coupon in self.fixed_coupon():
+                discount += coupon.discount
+        return discount
 
     def get_total_price_after_discount(self):
         return self.get_total_price() - self.get_discount()

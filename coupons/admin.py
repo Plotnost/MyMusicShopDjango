@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Coupon
+from .models import PercentageCoupon, FixedPriceCoupon
 
 
 class CouponAdmin(admin.ModelAdmin):
@@ -8,4 +8,5 @@ class CouponAdmin(admin.ModelAdmin):
     search_fields = ['code']
 
 
-admin.site.register(Coupon, CouponAdmin)
+admin.site.register(PercentageCoupon, CouponAdmin)
+admin.site.register(FixedPriceCoupon, CouponAdmin)
